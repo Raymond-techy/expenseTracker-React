@@ -98,8 +98,10 @@ function Expense() {
           >
             <li>{transaction.narration}</li>
             <li>
-              {transaction.type === "debit" ? "-" : "+"}
-              {transaction.amount}
+              {transaction.type === "debit" ? "-" : "+"}₦
+              {transaction.amount
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </li>
           </ul>
         ))}

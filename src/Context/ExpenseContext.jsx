@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const ExpenseContext = createContext();
 
@@ -9,13 +10,17 @@ export const ExpenseProvider = ({ children }) => {
     console.log(transaction);
     if (transaction.type === "credit" && transaction.amount !== 0) {
       setTotalAmount((prevState) => prevState + +transaction.amount);
+      toast.success(`₦${transaction.amount} fund added`);
     } else if (
       transaction.type === "debit" &&
       totalAmount >= +transaction.amount
     ) {
       setTotalAmount((prevState) => prevState - +transaction.amount);
+      toast.success(`₦${transaction.amount} sent`, {
+        toastId: "%^&%^&&^FRFER",
+      });
     } else if (Number(transaction.amount) > totalAmount) {
-      alert("insufficient Fund");
+      toast.error("Insufficient fund", { toastId: "647734ggghvyv6#4" });
       return;
     }
 
