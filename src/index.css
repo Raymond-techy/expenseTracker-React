@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f2f4f8;
+  margin: 0;
+  box-sizing: border-box;
+}
+.expenseHead {
+  background: #fff;
+  padding: 20px 0;
+  border-radius: 15px;
+  width: 300px;
+  margin: 0 auto;
+}
+.expenseHead button {
+  color: #fff;
+  background: #33f82c;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.debitForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.debitForm input,
+.debitForm button {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #33f82c;
+}
+.debitForm button {
+  background-color: #33f82c74;
+  border: 1px solid #33f82c;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.transDiv {
+  padding: 10px 20px;
+  border-radius: 5px 0 0 5px;
+  width: 380px;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  background: #fff;
+  margin: 0 auto;
+  list-style: none;
+  margin-bottom: 8px;
+}
+.transList {
+  margin-top: 30px;
+}
