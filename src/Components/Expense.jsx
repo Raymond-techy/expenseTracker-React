@@ -40,7 +40,7 @@ function Expense() {
         <div className="balanceBox">
           <p>Account Balance</p>
           <p className="balance">
-            {totalAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            ₦{totalAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </p>
         </div>
         <button
@@ -93,11 +93,18 @@ function Expense() {
             style={
               transaction.type === "debit"
                 ? { borderRight: "5px red solid" }
-                : { borderRight: "5px green solid" }
+                : { borderRight: "5px #33f82c solid" }
             }
           >
             <li>{transaction.narration}</li>
-            <li>
+            <li
+              style={
+                transaction.type === "debit"
+                  ? { color: "red" }
+                  : { color: "#33f82c" }
+              }
+              className="transAmount"
+            >
               {transaction.type === "debit" ? "-" : "+"}₦
               {transaction.amount
                 .toString()

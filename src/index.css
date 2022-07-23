@@ -16,6 +16,10 @@ body {
   width: 300px;
   margin: 0 auto;
 }
+.balance {
+  font-size: medium;
+  font-weight: bold;
+}
 .expenseHead button {
   color: #fff;
   background: #33f82c;
@@ -49,10 +53,15 @@ body {
   font-size: 15px;
   cursor: pointer;
 }
+.transAmount {
+  font-size: small;
+  font-weight: bold;
+}
+
 .transDiv {
   padding: 10px 20px;
   border-radius: 5px 0 0 5px;
-  width: 350px;
+  max-width: 320px;
   display: flex;
   flex: row;
   justify-content: space-between;
