@@ -85,34 +85,38 @@ function Expense() {
           </form>
         </div>
       )}
-      <div className="transList">
-        {transactionList.map((transaction, index) => (
-          <ul
-            key={index}
-            className="transDiv"
-            style={
-              transaction.type === "debit"
-                ? { borderRight: "5px red solid" }
-                : { borderRight: "5px #33f82c solid" }
-            }
-          >
-            <li>{transaction.narration}</li>
-            <li
+      {transactionList.length > 0 ? (
+        <div className="transList">
+          {transactionList.map((transaction, index) => (
+            <ul
+              key={index}
+              className="transDiv"
               style={
                 transaction.type === "debit"
-                  ? { color: "red" }
-                  : { color: "#33f82c" }
+                  ? { borderRight: "5px red solid" }
+                  : { borderRight: "5px #33f82c solid" }
               }
-              className="transAmount"
             >
-              {transaction.type === "debit" ? "-" : "+"}₦
-              {transaction.amount
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            </li>
-          </ul>
-        ))}
-      </div>
+              <li>{transaction.narration}</li>
+              <li
+                style={
+                  transaction.type === "debit"
+                    ? { color: "red" }
+                    : { color: "#33f82c" }
+                }
+                className="transAmount"
+              >
+                {transaction.type === "debit" ? "-" : "+"}₦
+                {transaction.amount
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </li>
+            </ul>
+          ))}
+        </div>
+      ) : (
+        <h2>No transaction done Yet</h2>
+      )}
     </div>
   );
 }
