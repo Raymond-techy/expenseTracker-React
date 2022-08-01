@@ -10,15 +10,24 @@ export const ExpenseProvider = ({ children }) => {
     console.log(transaction);
     if (transaction.type === "credit" && transaction.amount !== 0) {
       setTotalAmount((prevState) => prevState + +transaction.amount);
-      toast.success(`₦${transaction.amount} fund added`);
+      toast.success(
+        `₦${transaction.amount
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} fund added`
+      );
     } else if (
       transaction.type === "debit" &&
       totalAmount >= +transaction.amount
     ) {
       setTotalAmount((prevState) => prevState - +transaction.amount);
-      toast.success(`₦${transaction.amount} sent`, {
-        toastId: "%^&%^&&^FRFER",
-      });
+      toast.success(
+        `₦${transaction.amount
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} sent`,
+        {
+          toastId: "%^&%^&&^FRFER",
+        }
+      );
     } else if (Number(transaction.amount) > totalAmount) {
       toast.error("Insufficient fund", { toastId: "647734ggghvyv6#4" });
       return;

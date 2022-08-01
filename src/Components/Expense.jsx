@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { toast } from "react-toastify";
 import { ExpenseContext } from "../Context/ExpenseContext";
 function Expense() {
   const [transType, setTransType] = useState("");
@@ -16,7 +17,6 @@ function Expense() {
       type: transType,
     }));
     handleTransaction(formData);
-    console.log(formData);
     setFormData((prevState) => ({
       ...prevState,
       amount: "",
@@ -72,6 +72,7 @@ function Expense() {
               min="500"
               value={amount}
               onChange={onChange}
+              required
             />
             <input
               id="narration"
