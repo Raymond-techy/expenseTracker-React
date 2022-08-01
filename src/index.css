@@ -91,7 +91,7 @@ body {
   border-radius: 50%;
   top: 0;
   right: 30%;
-  background-color: #f8332c9a;
+  background-color: #ef0901ee;
   margin: 0 auto;
   cursor: pointer;
   color: #fff;
@@ -140,4 +140,9 @@ body {
 }
 .transList {
   margin-top: 30px;
+}
+@media (max-width: 600px) {
+  .closeBtn {
+    right: 10%;
+  }
 }
