@@ -1,12 +1,20 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { toast } from "react-toastify";
 import { ExpenseContext } from "../Context/ExpenseContext";
+import Spinner from "../Spinner";
 function Expense() {
+  const [loading, setLoading] = useState(true);
   const [transType, setTransType] = useState("");
   const [formData, setFormData] = useState({
     amount: "",
     narration: "",
   });
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+
   const { amount, narration } = formData;
   const { totalAmount, handleTransaction, transactionList } =
     useContext(ExpenseContext);
@@ -31,6 +39,7 @@ function Expense() {
       type: transType,
     }));
   };
+  if (loading) return <Spinner />;
   return (
     <div>
       <div className="nav">
