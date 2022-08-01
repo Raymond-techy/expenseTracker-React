@@ -85,7 +85,20 @@ body {
   margin-right: 5px;
   cursor: pointer;
 }
+.closeBtn {
+  position: absolute;
+  padding: 6px;
+  border-radius: 50%;
+  top: 0;
+  right: 32%;
+  background-color: #f8332c9a;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+}
 .debitForm {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 10px;

@@ -39,6 +39,14 @@ function Expense() {
       type: transType,
     }));
   };
+  const handleFormClose = () => {
+    setTransType("");
+    setFormData((prevState) => ({
+      ...prevState,
+      amount: "",
+      narration: "",
+    }));
+  };
   if (loading) return <Spinner />;
   return (
     <div>
@@ -70,6 +78,9 @@ function Expense() {
       {transType !== "" && (
         <div className="expenseForm">
           <form className="debitForm" onSubmit={onSubmit}>
+            <div className="closeBtn" onClick={handleFormClose}>
+              <span>X</span>
+            </div>
             <div>
               <h3>{transType.toUpperCase()} Form</h3>
             </div>

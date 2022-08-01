@@ -32,7 +32,6 @@ export const ExpenseProvider = ({ children }) => {
       toast.error("Insufficient fund", { toastId: "647734ggghvyv6#4" });
       return;
     }
-
     setTransactionList((prevState) => [transaction, ...prevState]);
     return;
   };
