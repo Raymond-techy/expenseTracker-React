@@ -17,7 +17,7 @@ body {
 
 .loader span {
   position: absolute;
-  color: #fff;
+  color: #33f82c;
   transform: translate(-50%, -50%);
   font-size: 38px;
   letter-spacing: 5px;
@@ -25,12 +25,12 @@ body {
 
 .loader span:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 0.3px rgb(162, 255, 128);
+  -webkit-text-stroke: 0.3px rgb(68, 255, 0);
 }
 
 .loader span:nth-child(2) {
-  color: rgb(162, 255, 128);
-  -webkit-text-stroke: 1px rgb(162, 255, 128);
+  color: rgb(68, 255, 0);
+  -webkit-text-stroke: 1px rgb(68, 255, 0);
   animation: uiverse723 3s ease-in-out infinite;
 }
 
