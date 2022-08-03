@@ -101,6 +101,7 @@ function Expense() {
               placeholder="Narration"
               value={narration}
               onChange={onChange}
+              required
             />
             <button type="submit">Submit</button>
           </form>
